@@ -5,6 +5,11 @@ let change_numbers_2 = document.getElementById('change_numbers_2');
 
 let start_section = document.getElementsByClassName('start_section');
 
+let ataque_random = ['a banana', 'a deuda', ' televisor',
+'a reseña',  ' Leiva', ' comentario hiriente', ' Afedo cámate pofavo', 'a indirecta', ' rosario', 
+' ecoladrillo', 'a solicitud de amistad', 
+' "No gracias, es que quiero concentrarme en mis estudios pero sigamos siendo amigos"'];
+
 start_button.addEventListener('click', start_game);
 
 function start_game(){
@@ -38,6 +43,7 @@ function controlar_vida_enemigo(){
   if(vida_enemigo <= 0){
     vida_enemigo = 0;
     barra_interna[0].style.setProperty('border','0px solid');
+    text.innerHTML = name[0].innerHTML + ' murió en la fría soledad de la esclavitud por su relativa fragilidad.<br/> En el abismo de la violencia pokemón y sus peleas clandestinas.'
   }
 }
 
@@ -46,28 +52,36 @@ function resta_al_enemigo_1(){
   vida_enemigo -= 3;
   controlar_vida_enemigo();
   barra_interna[0].style.setProperty('width',vida_enemigo * 10 + 'px');
-  text.innerHTML = name[1].innerHTML + ' ha lanzado ' + action[0].innerHTML + ' a ' + name[0].innerHTML;
+  if(vida_enemigo > 0){
+    text.innerHTML = name[1].innerHTML + ' ha quemado con el lanzallamas a ' + name[0].innerHTML + '.';
+  }
   change_numbers_1.innerHTML = vida_enemigo;
 }
 function resta_al_enemigo_2(){
   vida_enemigo -= 2;
   controlar_vida_enemigo();
   barra_interna[0].style.setProperty('width',vida_enemigo * 10 + 'px');
-  text.innerHTML = name[1].innerHTML + ' ha lanzado ' + action[1].innerHTML + ' a ' + name[0].innerHTML;
+  if(vida_enemigo > 0){
+    text.innerHTML = name[1].innerHTML + ' le ha lanzado  un ' + action[1].innerHTML.toLowerCase() + ' a ' + name[0].innerHTML + '.';
+  }
   change_numbers_1.innerHTML = vida_enemigo;
 }
 function resta_al_enemigo_3(){
   vida_enemigo -= 1;
   controlar_vida_enemigo();
   barra_interna[0].style.setProperty('width',vida_enemigo * 10 + 'px');
-  text.innerHTML = name[1].innerHTML + ' ha lanzado ' + action[2].innerHTML + ' a ' + name[0].innerHTML;
+  if(vida_enemigo > 0){
+    text.innerHTML = name[1].innerHTML +  ' le ha lanzado un' + ataque_random[Math.floor(Math.random() * (ataque_random.length)) ] + ' a ' + name[0].innerHTML + '.';
+  }
   change_numbers_1.innerHTML = vida_enemigo;
 }
 function resta_al_enemigo_4(){
   vida_enemigo -= 5;
   controlar_vida_enemigo();
   barra_interna[0].style.setProperty('width',vida_enemigo * 10 + 'px');
-  text.innerHTML = name[1].innerHTML + ' ha lanzado ' + action[3].innerHTML + ' a ' + name[0].innerHTML;
+  if(vida_enemigo > 0){
+    text.innerHTML = name[1].innerHTML + ' le ha lanzado un ' + action[3].innerHTML + ' a ' + name[0].innerHTML + '.<br/>Y ha sido super efectivo.';
+  }
   change_numbers_1.innerHTML = vida_enemigo;
 }
 
