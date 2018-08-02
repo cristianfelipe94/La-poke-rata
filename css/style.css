@@ -1,0 +1,223 @@
+/* global section */
+*{
+  font-family: 'Press Start 2P', cursive;
+  margin: 0;
+  padding: 0;
+}
+
+:root{
+  --buttons-height: 50px;
+  --buttons-width: 300px;
+  /* (HAY QUE DEFINIR LOS COLORES POR DEFECTO) */
+}
+
+#music_4_battle{
+  display: none;
+}
+/* global section */
+
+
+
+
+/* sections section */
+.height_class{
+  position: absolute;
+  height: 100vh;
+  width: 99.86%;
+  border: 1px solid black;
+  background: white;
+}
+
+.inside{
+  position: relative;
+  height: 100vh;
+  width: 100%;
+}
+
+.developers_section{
+  top: 100vh;
+}
+
+.start_section{
+  transition: 1s;
+  top: 0;
+  z-index: 101;
+}
+/* sections section */
+
+
+
+
+/* press start section */
+#start_button{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: var(--buttons-width);
+  height: var(--buttons-height);
+}
+/* press start section */
+
+/* juicy section */
+.interaction_menu{
+  height: 30vh;
+  border: 1px solid black;
+  position: relative;
+  background: white;
+  top: 70vh;
+  bottom: 0;
+  z-index: 100;
+}
+
+#text{
+  width: 40%;
+  height: 140px;
+  overflow: auto;
+  border: 1px solid black;
+  position: absolute;
+  top: 5vh;
+  left: 1vw;
+  font-size: 12px;
+  line-height: 2;
+  padding: 5px 0px 0px 7px;
+  display: inline-block;
+}
+.text span{
+  font-weight: bold;
+}
+.grid_options{
+  width: 55%;
+  height: 20vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  position: absolute;
+  top: 5vh;
+  right: 0vw;
+}
+
+.action{
+  width: 95%;
+  height: 50px;
+}
+
+#character_1{
+  position: absolute;
+  width: 300px;
+  height: 400px;
+  bottom: 50px;
+  left: 50px;
+  border: 1px solid black;
+  background: white;
+  z-index: 99;
+}
+
+#character_2{
+  position: absolute;
+  width: 150px;
+  height: 225px;
+  top: 50px;
+  right: 150px;
+  border: 1px solid black;
+  background: white;
+  z-index: 97;
+}
+
+.smooth_move{
+  transition: 2s;
+}
+
+.barra{
+  background: white;
+  border: 1px solid black;
+  width: 513px;
+  height: 125px;
+  position: absolute;
+}
+
+.barra h2{
+  padding-left: 7px;
+  padding-top: 7px;
+  font-size: 20px;
+}
+
+.ch2{
+  top: 2vh;
+  left: 2vh;
+}
+
+.ch1{
+  top: 40vh;
+  right: 2vh;
+  z-index: 98;
+}
+
+.life_inner_section{
+  width: 450px;
+  padding:1px  7px;
+  height: 44px;
+  border: 1px solid black;
+  position: relative;
+  top: 20px;
+  left: 20px;
+}
+
+.life_inner_section > span{
+  position: relative;
+  bottom: 9px;
+  font-size: 9.7px;
+}
+
+.barra_borde{
+  width: 320px;
+  position: relative;
+  top: 4px;
+  height: 35px;
+  display: inline-block;
+  border: 1px solid black;
+  
+}
+
+.barra_interna{
+  transition: 1s;
+  height: 35px;
+  width: 320px;
+}
+
+.color_1{
+  background: #22d628;
+}
+
+.color_2{
+  background: #ffd907;
+  animation: yellow_danger 1s ease-in-out infinite;
+}
+
+@keyframes yellow_danger{
+  0%{
+    background: #ffd907;
+  }
+  50%{
+    background: #ffe03a;
+  }
+}
+
+.color_3{
+  background: #ff2e2e;
+  animation: real_danger 0.5s ease-in-out infinite;
+}
+
+@keyframes real_danger{
+  0%{
+    background: #ff0707;
+  }
+  50%{
+    background: #ff5b5b;
+  }
+}
+/* juicy section */
+
+/* responsive */
+/* responsive */
