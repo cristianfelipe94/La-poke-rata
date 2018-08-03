@@ -90,3 +90,24 @@ action[0].addEventListener('click',resta_al_enemigo_1);
 action[1].addEventListener('click',resta_al_enemigo_2);
 action[2].addEventListener('click',resta_al_enemigo_3);
 action[3].addEventListener('click',resta_al_enemigo_4);
+
+//sound part
+
+let content_sound = document.getElementById('content_sound');
+let icon_transition = document.getElementsByClassName('icon_transition');
+let sound_viewer = true;
+
+function control_sound(){
+  if(sound_viewer == true){
+    icon_transition[0].setAttribute('class','icon_transition sound_of');
+    music_4_battle.pause();
+    sound_viewer = false;
+  }else if(sound_viewer == false){
+    icon_transition[0].setAttribute('class','icon_transition sound_on');
+    music_4_battle.play();
+    sound_viewer = true;
+  }
+  
+}
+
+content_sound.addEventListener('click',control_sound);
