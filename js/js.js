@@ -99,7 +99,7 @@ let sound_viewer = true;
 
 function control_sound(){
   if(sound_viewer == true){
-    icon_transition[0].setAttribute('class','icon_transition sound_of');
+    icon_transition[0].setAttribute('class','icon_transition sound_off');
     music_4_battle.pause();
     sound_viewer = false;
   }else if(sound_viewer == false){
