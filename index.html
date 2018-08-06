@@ -1,51 +1,89 @@
 <!DOCTYPE html>
-    <html lang="en">
+    <html lang="es">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
-        <link rel="stylesheet" href="style.css">
-        <title>La poke rata</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="shortcut icon" href="img/icon/favicon.ico" type="image/x-icon">
+        <title>La Poke Rata Game</title>
     </head>
     <body>
-        <button id="sonido_music_bacckground">
-                ➤
-        </button>
-        <audio id="music_t" controls autoplay loop>
-            <source src="p.mp3" type="audio/mpeg">
-        </audio>
-        <div class="background">
-            <div class="floor">
-              <div class="wrapper_r_pl_1">
-                <div class="ready_player_1">
-                  <h4>Motapod <span>&#9794</span></h4>
-                  <div class="barra">
-                    <div class="vida">
-                      <span>HP</span>
-                      <div class="barra_blanca">
-                        <div class="barra_verde"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-          
-              <div class="wrapper_r_pl_2">
-                <div class="ready_player_2">
-                  <h4>Pitochu <span>&#9794</span></h4>
-                  <div class="barra">
-                    <div class="vida">
-                      <span>HP</span>
-                      <div class="barra_blanca">
-                        <div class="barra_verde"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+
+      <!-- Invisible audio -->
+      <audio id="music_4_battle" src="sounds/music/music_4_battle.mp3" controls loop></audio>
+
+      <!-- where the juicy stuff is -->
+      <div class="height_class game_section temporal_bg_color_1">
+          <div class="inside">
+            
+            <div class="smooth_move" id="character_2">
+              
+            </div>
+            
+            <div class="smooth_move" id="character_1">
+              
+            </div>
+            
+            <div id="content_sound">
+              <div class="icon_transition sound_on"></div>
+            </div>
+            
+            <div class="interaction_menu">
+              <p id="text">
+                <span>A batallar!!</span>
+              </p>
+              <div class="grid_options">
+                <button class="action">Lanzallamas</button>
+                <button class="action">Tenedor</button>
+                <button class="action">Random</button>
+                <button class="action">Arroz</button>
               </div>
             </div>
+            
+            <div class="barra ch2">
+              <h2 class="name">Motapod</h2>
+              <div class="life_inner_section">
+                <span>Hp</span>
+                <div class="barra_borde">
+                  <div id="change_bar_1" class="barra_interna color_1"></div>
+                </div>
+                 <span>
+                   <span id="change_numbers_1">32</span>/32
+                </span>
+              </div>
+            </div>
+            <div class="barra ch1">
+              <h2 class="name">Pitochu</h2>
+              <div class="life_inner_section">
+                <span>Hp</span>
+                <div class="barra_borde">
+                  <div id="change_bar_2" class="barra_interna color_1"></div>
+                </div>
+                 <span>
+                   <span id="change_numbers_2">32</span>/32
+                </span>
+              </div>
+            </div>
+            
           </div>
-          <script src="js.js"></script>
+        </div>
+
+      <!-- The hidden section to play or show stats and play again -->
+      <div class="height_class start_section temporal_bg_color_2">
+        <div class="inside">
+          <button id="start_button">Start to Play</button>
+        </div>
+      </div>
+
+      <!-- section for developers info -->
+      <div class="height_class developers_section">
+        <div class="inside">
+
+        </div>
+      </div>
+
+      <script src="js/js.js"></script>
     </body>
 </html>
