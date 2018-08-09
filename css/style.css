@@ -253,28 +253,122 @@ body{
 
 #character_1{
   position: absolute;
-  width: 150px;
-  height: 225px;
+  height: 118px;
+  transform: rotateY(180deg);
   bottom: 32vh;
   left: 150px;
-  border: 1px solid black;
-  background: white;
   z-index: 99;
+  animation: frames_psyduck_container 1.4s step-end infinite;
+}
+@keyframes frames_psyduck_container {
+  0%{
+    width: 78px;
+  }
+  25%{
+    width: 81px;
+  }
+
+  50%{
+    width: 85px;
+  }
+
+  75%{
+    width: 81px;
+  }
+
+  100%{
+    width: 78px;
+  }
 }
 
 #character_2{
   position: absolute;
-  width: 150px;
-  height: 225px;
+  height: 104px;
   bottom: 32vh;
   right: 150px;
-  border: 1px solid black;
-  background: white;
   z-index: 97;
+  animation: frames_machop_container 1.4s step-end infinite;
+}
+@keyframes frames_machop_container {
+  0%{
+    width: 81px;
+  }
+  25%{
+    width: 74px;
+  }
+
+  50%{
+    width: 80px;
+  }
+
+  75%{
+    width: 74px;
+  }
+
+  100%{
+    width: 81px;
+  }
 }
 
 .smooth_move{
   transition: 2s;
+  overflow: hidden;
+}
+
+.psyduckFrame{
+  width: 1000px;
+  position: relative;
+  left: -80px;
+  animation: frames_psyduck 1.4s step-end infinite;
+}
+
+@keyframes frames_psyduck {
+  0%{
+    left: -80px;
+  }
+
+  25%{
+    left: -235px;
+  }
+
+  50%{
+    left: -319px;
+  }
+
+  75%{
+    left: -235px;
+  }
+
+  100%{
+    left: -80px;
+  }
+}
+
+
+.machopFrame{
+  width: 1000px;
+  position: relative;
+  animation: frames_machop 1400ms step-end infinite;
+}
+@keyframes frames_machop{
+  0%{
+    left: -1px;
+  }
+  25%{
+    left: -85px;
+  }
+
+  50%{
+    left: -162px;
+  }
+
+  75%{
+    left: -85px;
+  }
+
+  100%{
+    left: -1px;
+  }
 }
 
 .barra{
