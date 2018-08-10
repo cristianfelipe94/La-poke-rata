@@ -13,6 +13,7 @@
 
 body{
   overflow-x: hidden;
+  background: #2d461c;
 }
 
 #music_4_battle{
@@ -103,6 +104,7 @@ body{
 
 .developers_section{
   top: 100vh;
+  background: -webkit-linear-gradient(top, #000, transparent 90%);
 }
 
 .start_section{
@@ -192,8 +194,20 @@ body{
   background-image: url('https://wallpaper-house.com/data/out/8/wallpaper2you_209893.jpg');
   position: relative;
   height: 100vh;
-  background-size: 1460px;
-  background-position: top;
+  background-size: 2000px;
+  background-position-y: -470px;
+  background-position-x: 0%;
+  background-repeat: no-repeat;
+  animation: background_move 60s infinite;
+}
+
+@keyframes background_move{
+  0%{
+    background-position-x: 0%;
+  }
+  50%{
+    background-position-x: 100%;
+  }
 }
 
 .interaction_menu{
@@ -203,8 +217,7 @@ body{
   bottom: 0;
   z-index: 100;
   background: -webkit-linear-gradient(top,
-  transparent,#000,#000,#000, 
-  #000, #000, #000);
+  transparent,#000 90%);
 }
 
 #text{
@@ -258,7 +271,7 @@ body{
   bottom: 32vh;
   left: 150px;
   z-index: 99;
-  animation: frames_psyduck_container 1.4s step-end infinite;
+  animation: frames_psyduck_container 1.6s step-end infinite;
 }
 @keyframes frames_psyduck_container {
   0%{
@@ -319,7 +332,7 @@ body{
   width: 1000px;
   position: relative;
   left: -80px;
-  animation: frames_psyduck 1.4s step-end infinite;
+  animation: frames_psyduck 1.6s step-end infinite;
 }
 
 @keyframes frames_psyduck {
@@ -388,12 +401,32 @@ body{
 .ch2{
   top: 6vh;
   left: 2vh;
+  animation: ch2_float 3.5s ease-in-out infinite;
 }
 
 .ch1{
   top: 6vh;
   right: 2vh;
   z-index: 98;
+  animation: ch1_float 4.5s ease-in-out infinite;
+}
+
+@keyframes ch2_float{
+  0%{
+    top: 6vh;
+  }
+  50%{
+    top: 8vh;
+  }
+}
+
+@keyframes ch1_float{
+  0%{
+    top: 6vh;
+  }
+  50%{
+    top: 8vh;
+  }
 }
 
 .life_inner_section{
@@ -462,6 +495,40 @@ body{
     background: #ff5b5b;
   }
 }
+
+
+@media only screen and (max-width: 1110px){
+  .ch1{
+    top: 16vh;
+  }
+  .ch2{
+    top: 30vh;
+  }
+  @keyframes ch2_float{
+    0%{
+      top: 30vh;
+    }
+    50%{
+      top: 32vh;
+    }
+  }
+  
+  @keyframes ch1_float{
+    0%{
+      top: 16vh;
+    }
+    50%{
+      top: 18vh;
+    }
+  }
+  #character_1{
+    bottom: 30vh;
+  }
+  #character_2{
+    bottom: 30vh;
+  }
+}
+
 /* juicy section */
 
 /* responsive */
