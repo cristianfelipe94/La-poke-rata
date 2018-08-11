@@ -258,11 +258,11 @@ body{
 #character_1{
   position: absolute;
   height: 118px;
-  transform: rotateY(180deg);
   bottom: 32vh;
-  left: 150px;
+  right: 150px;
   z-index: 99;
   animation: frames_psyduck_container 1.6s step-end infinite;
+
 }
 @keyframes frames_psyduck_container {
   0%{
@@ -289,9 +289,10 @@ body{
   position: absolute;
   height: 104px;
   bottom: 32vh;
-  right: 150px;
+  left: 150px;
   z-index: 97;
   animation: frames_machop_container 1.4s step-end infinite;
+  transform: rotateY(180deg);
 }
 @keyframes frames_machop_container {
   0%{
@@ -391,13 +392,13 @@ body{
 
 .ch2{
   top: 6vh;
-  left: 2vh;
+  right: 2vh;
   animation: ch2_float 3.5s ease-in-out infinite;
 }
 
 .ch1{
   top: 6vh;
-  right: 2vh;
+  left: 2vh;
   z-index: 98;
   animation: ch1_float 4.5s ease-in-out infinite;
 }
