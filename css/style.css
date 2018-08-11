@@ -3,6 +3,7 @@
   font-family: 'Press Start 2P', cursive;
   margin: 0;
   padding: 0;
+  user-select: none;
 }
 
 :root{
@@ -198,16 +199,6 @@ body{
   background-position-y: -470px;
   background-position-x: 0%;
   background-repeat: no-repeat;
-  animation: background_move 60s infinite;
-}
-
-@keyframes background_move{
-  0%{
-    background-position-x: 0%;
-  }
-  50%{
-    background-position-x: 100%;
-  }
 }
 
 .interaction_menu{
@@ -495,8 +486,9 @@ body{
     background: #ff5b5b;
   }
 }
+/* juicy section */
 
-
+/* responsive */
 @media only screen and (max-width: 1110px){
   .ch1{
     top: 16vh;
@@ -528,8 +520,4 @@ body{
     bottom: 30vh;
   }
 }
-
-/* juicy section */
-
-/* responsive */
 /* responsive */
