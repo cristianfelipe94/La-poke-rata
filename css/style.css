@@ -3,6 +3,7 @@
   font-family: 'Press Start 2P', cursive;
   margin: 0;
   padding: 0;
+  user-select: none;
 }
 
 :root{
@@ -13,6 +14,7 @@
 
 body{
   overflow-x: hidden;
+  background: #2d461c;
 }
 
 #music_4_battle{
@@ -24,7 +26,7 @@ body{
 #content_sound{
   width: 100px;
   height: 60px;
-  position: fixed;
+  position: absolute;
   right: 0;
   left: 0;
   z-index: 100;
@@ -72,6 +74,18 @@ body{
   border-bottom: 20px double transparent;
   border-right: 20px double white;
 }
+.sound_medium:after{
+  width: 25px;
+  height: 31px;
+  background: transparent;
+  left: 1px;
+  bottom: 40px;
+  border-radius: 50%;
+  border-top: 10px solid transparent;
+  border-left: 20px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid white;
+}
 .sound_off:after{
   width: 25px;
   height: 31px;
@@ -103,6 +117,7 @@ body{
 
 .developers_section{
   top: 100vh;
+  background: -webkit-linear-gradient(top, #000, transparent 90%);
 }
 
 .start_section{
@@ -192,8 +207,10 @@ body{
   background-image: url('https://wallpaper-house.com/data/out/8/wallpaper2you_209893.jpg');
   position: relative;
   height: 100vh;
-  background-size: 1460px;
-  background-position: top;
+  background-size: 2000px;
+  background-position-y: -470px;
+  background-position-x: 0%;
+  background-repeat: no-repeat;
 }
 
 .interaction_menu{
@@ -203,8 +220,7 @@ body{
   bottom: 0;
   z-index: 100;
   background: -webkit-linear-gradient(top,
-  transparent,#000,#000,#000, 
-  #000, #000, #000);
+  transparent,#000 90%);
 }
 
 #text{
@@ -254,11 +270,11 @@ body{
 #character_1{
   position: absolute;
   height: 118px;
-  transform: rotateY(180deg);
   bottom: 32vh;
-  left: 150px;
+  right: 150px;
   z-index: 99;
-  animation: frames_psyduck_container 1.4s step-end infinite;
+  animation: frames_psyduck_container 1.6s step-end infinite;
+
 }
 @keyframes frames_psyduck_container {
   0%{
@@ -285,9 +301,10 @@ body{
   position: absolute;
   height: 104px;
   bottom: 32vh;
-  right: 150px;
+  left: 150px;
   z-index: 97;
   animation: frames_machop_container 1.4s step-end infinite;
+  transform: rotateY(180deg);
 }
 @keyframes frames_machop_container {
   0%{
@@ -319,7 +336,7 @@ body{
   width: 1000px;
   position: relative;
   left: -80px;
-  animation: frames_psyduck 1.4s step-end infinite;
+  animation: frames_psyduck 1.6s step-end infinite;
 }
 
 @keyframes frames_psyduck {
@@ -387,13 +404,33 @@ body{
 
 .ch2{
   top: 6vh;
-  left: 2vh;
+  right: 2vh;
+  animation: ch2_float 3.5s ease-in-out infinite;
 }
 
 .ch1{
   top: 6vh;
-  right: 2vh;
+  left: 2vh;
   z-index: 98;
+  animation: ch1_float 4.5s ease-in-out infinite;
+}
+
+@keyframes ch2_float{
+  0%{
+    top: 6vh;
+  }
+  50%{
+    top: 8vh;
+  }
+}
+
+@keyframes ch1_float{
+  0%{
+    top: 6vh;
+  }
+  50%{
+    top: 8vh;
+  }
 }
 
 .life_inner_section{
@@ -465,4 +502,35 @@ body{
 /* juicy section */
 
 /* responsive */
+@media only screen and (max-width: 1110px){
+  .ch1{
+    top: 16vh;
+  }
+  .ch2{
+    top: 30vh;
+  }
+  @keyframes ch2_float{
+    0%{
+      top: 30vh;
+    }
+    50%{
+      top: 32vh;
+    }
+  }
+  
+  @keyframes ch1_float{
+    0%{
+      top: 16vh;
+    }
+    50%{
+      top: 18vh;
+    }
+  }
+  #character_1{
+    bottom: 30vh;
+  }
+  #character_2{
+    bottom: 30vh;
+  }
+}
 /* responsive */
