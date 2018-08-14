@@ -171,16 +171,16 @@ body{
 .cloud_1{
   top: 25vh;
   right: -400px;
-  position: absolute;
-  background-image: url(../img/sprites/nubegrande.png);
+  position: fixed;
+  background-image: url('../img/sprites/nubegrande.png');
   animation: cloud-right 60s ease-in-out infinite;
 }
 
 .cloud_2{
   top: 20vh;
-  position: absolute;
+  position: fixed;
   left: -400px;    
-  background-image: url(../img/sprites/nubepeque.png);
+  background-image: url('../img/sprites/nubepeque.png');
   animation: cloud-left 45s ease-in-out infinite;
 }
 
@@ -203,14 +203,13 @@ body{
 }
 
 
-.background{
-  background-image: url('https://wallpaper-house.com/data/out/8/wallpaper2you_209893.jpg');
-  position: relative;
-  height: 100vh;
-  background-size: 2000px;
-  background-position-y: -470px;
-  background-position-x: 0%;
-  background-repeat: no-repeat;
+.background_img {
+  position: absolute;
+  background-image: url('../img/bg/bg_game1.png');
+  height: 80vh;
+  width: 100%;
+  background-repeat-y: no-repeat;
+  background-size: contain;
 }
 
 .interaction_menu{
@@ -271,7 +270,7 @@ body{
   position: absolute;
   height: 118px;
   bottom: 32vh;
-  right: 150px;
+  right: 10%;
   z-index: 99;
   animation: frames_psyduck_container 1.6s step-end infinite;
 
@@ -301,7 +300,7 @@ body{
   position: absolute;
   height: 104px;
   bottom: 32vh;
-  left: 150px;
+  left: 10%;
   z-index: 97;
   animation: frames_machop_container 1.4s step-end infinite;
   transform: rotateY(180deg);
@@ -532,5 +531,9 @@ body{
   #character_2{
     bottom: 30vh;
   }
+  .background_img {
+    background-size: cover;
+  }
 }
+
 /* responsive */
