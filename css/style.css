@@ -212,6 +212,15 @@ body{
   background-size: contain;
 }
 
+.background_floor {
+  position: absolute;
+  background-image: url('../img/bg/bg_game3.png');
+  height: 80vh;
+  width: 100%;
+  background-repeat-y: no-repeat;
+  background-size: contain;
+}
+
 .interaction_menu{
   height: 30vh;
   position: relative;
@@ -224,6 +233,7 @@ body{
 
 #text{
   width: 35%;
+  height: 250px;
   background: white;
   height: 140px;
   overflow: auto;
@@ -502,18 +512,40 @@ body{
 
 /* responsive */
 @media only screen and (max-width: 1110px){
+  #start_button {
+    font-size: 22px;
+    width: 80vw;
+    height: 3vh;
+  }
   .ch1{
     top: 16vh;
+    left: -1vw;
   }
   .ch2{
-    top: 30vh;
+    top: 16vh;
+    right: 5vw;
+  }
+  .barra {
+    width: 450px;
+  }
+  #text {
+    font-size: 25px;
+    height: 225px;
+  }
+  .action{
+    font-size: 22px
+  }
+  .barra h2{
+    font-size: 35px;
+    margin: 0 0 15px 22px;
+
   }
   @keyframes ch2_float{
     0%{
-      top: 30vh;
+      top: 16vh;
     }
     50%{
-      top: 32vh;
+      top: 18vh;
     }
   }
   
@@ -532,6 +564,9 @@ body{
     bottom: 30vh;
   }
   .background_img {
+    background-size: cover;
+  }
+  .background_floor{
     background-size: cover;
   }
 }
