@@ -115,6 +115,21 @@ body{
   width: 100%;
 }
 
+.pokedex1 {
+  position: relative;
+  height: 50vh;
+  margin: 20px 0 0 50px;
+  float: left;
+}
+
+.pokedex2 {
+  position: relative;
+  height: 50vh;
+  margin: 20px 50px 0 0;
+  float: right;
+  transform: rotateY(180deg);
+}
+
 .developers_section{
   top: 100vh;
   background: -webkit-linear-gradient(top, #000, transparent 90%);
@@ -538,7 +553,13 @@ body{
   .barra h2{
     font-size: 35px;
     margin: 0 0 15px 22px;
-
+  }
+  .pokedex1 {
+    height: 42vh;
+  }
+  .pokedex2 {
+    height: 42vh;
+    transform: rotateY(180deg);
   }
   @keyframes ch2_float{
     0%{
