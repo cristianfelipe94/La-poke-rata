@@ -13,7 +13,7 @@
 }
 
 body{
-  overflow-x: hidden;
+  overflow: hidden;
   background: #2d461c;
 }
 
@@ -103,6 +103,10 @@ body{
 /* sound icon */
 
 /* sections section */
+.the_wrapper{
+  position: relative;
+}
+
 .height_class{
   position: absolute;
   height: 100vh;
@@ -510,8 +514,87 @@ body{
 }
 /* juicy section */
 
+/* final_space */
+.final_space{
+  font-family: 'Press Start 2P', cursive;
+  z-index: -1000000;
+  background: #000000df;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  transition: 1s;
+  opacity: 0;
+}
+
+.counter{
+  margin: 0px 80px;
+  display: inline-block; 
+  width: 50px;
+}
+.ending{
+  text-shadow: 1px 1px #fff000,
+               -1px 1px #fff000,
+               1px -1px #fff000,
+               -1px -1px #fff000;
+  color: #fff;
+  width: 90%;
+  height: 50vh;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  font-size: 9vw;
+}
+.decidiros{
+  width: 90%;
+  text-align: center;
+  height: 50vh;
+  position: fixed;
+  top: 0;
+  bottom: -400px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.decidiros span{
+  text-align: center;
+  font-size: 4vw;
+  color: #fff000;
+}
+.button_ending{
+  background: transparent;
+  font-family: inherit;
+  padding: 5px;
+  border: 0px solid;
+  font-size: 4vw;
+  color: #f6f6f6;
+  animation: tic_tac 1s step-end infinite;
+  outline: none;
+  text-shadow: 1px 1px #fff000,
+               -1px 1px #fff000,
+               1px -1px #fff000,
+               -1px -1px #fff000;
+}
+.button_ending:hover{
+  cursor: pointer;
+}
+
+@keyframes tic_tac{
+  50%{
+    color: black;
+    text-shadow: 1px 1px transparent,
+               -1px 1px transparent,
+               1px -1px transparent,
+               -1px -1px transparent;
+  }
+}
+/* final_space */
+
 /* responsive */
-@media only screen and (max-width: 1110px){
+@media only screen and (max-width: 1000px){
   #start_button {
     font-size: 22px;
     width: 80vw;
@@ -570,5 +653,4 @@ body{
     background-size: cover;
   }
 }
-
 /* responsive */

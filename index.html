@@ -9,74 +9,86 @@
       <title>La Poke Rata Game</title>
    </head>
    <body>
-      <!-- Invisible audio -->
-      <audio id="music_4_battle" src="sounds/music/music_4_battle.mp3"></audio>
-      <div class="background">
-      <div class="background_floor"></div>
-        <div class="background_img"></div>
-        <div class="clouds cloud_2"></div>
-        <div class="clouds cloud_1"></div>
-         <!-- where the juicy stuff is -->
-         <div class="height_class">
-            <div class="inside">
-               <div class="smooth_move" id="character_2">
-                  <img class="machopFrame" src="img/sprites/machop.png" alt="machop">
-               </div>
-               <div class="smooth_move" id="character_1">
-                  <img class="psyduckFrame" src="img/sprites/psyduck.png" alt="psyduck">
-               </div>
-               <div id="content_sound">
-                  <div class="icon_transition sound_on"></div>
-               </div>
-               <div class="interaction_menu">
-                  <p id="text">
-                     <span>A batallar!!</span>
-                  </p>
-                  <div class="grid_options">
-                     <button class="action">Patada</button>
-                     <button class="action">Tenedor</button>
-                     <button class="action">Random</button>
-                     <button class="action">Arroz</button>
-                  </div>
-               </div>
-               <div class="barra ch2">
-                  <h2 class="name">Psyduck</h2>
-                  <div class="life_inner_section">
-                     <span class="hp">Hp</span>
-                     <div class="barra_borde">
-                        <div id="change_bar_1" class="barra_interna color_1"></div>
-                     </div>
-                     <span>
-                      <span id="change_numbers_1">32</span><span>/</span> <span id="vida_max_1">32</span>
-                     </span>
-                  </div>
-               </div>
-               <div class="barra ch1">
-                  <h2 class="name ">Machop</h2>
-                  <div class="life_inner_section">
-                     <span class="hp">Hp</span>
-                     <div class="barra_borde">
-                        <div id="change_bar_2" class="barra_interna color_1"></div>
-                     </div>
-                     <span>
-                     <span id="change_numbers_2">32</span><span>/</span> <span id="vida_max_2">32</span>
-                     </span>
-                  </div>
-               </div>
-            </div>
-         </div>
+      <div class="the_wrapper">
+        <!-- Invisible audio -->
+        <audio id="music_4_battle" src="sounds/music/music_4_battle.mp3"></audio>
+        <div class="background">
+        <div class="background_floor"></div>
+          <div class="background_img"></div>
+          <div class="clouds cloud_2"></div>
+          <div class="clouds cloud_1"></div>
+          <!-- where the juicy stuff is -->
+          <div class="height_class">
+              <div class="inside">
+                <div class="smooth_move" id="character_2">
+                    <img class="machopFrame" src="img/sprites/machop.png" alt="machop">
+                </div>
+                <div class="smooth_move" id="character_1">
+                    <img class="psyduckFrame" src="img/sprites/psyduck.png" alt="psyduck">
+                </div>
+                <div id="content_sound">
+                    <div class="icon_transition sound_on"></div>
+                </div>
+                <div class="interaction_menu">
+                    <p id="text">
+                      <span>A batallar!!</span>
+                    </p>
+                    <div class="grid_options">
+                      <button class="action">Patada</button>
+                      <button class="action">Tenedor</button>
+                      <button class="action">Random</button>
+                      <button class="action">Arroz</button>
+                    </div>
+                </div>
+                <div class="barra ch2">
+                    <h2 class="name">Psyduck</h2>
+                    <div class="life_inner_section">
+                      <span class="hp">Hp</span>
+                      <div class="barra_borde">
+                          <div id="change_bar_1" class="barra_interna color_1"></div>
+                      </div>
+                      <span>
+                        <span id="change_numbers_1">32</span><span>/</span> <span id="vida_max_1">32</span>
+                      </span>
+                    </div>
+                </div>
+                <div class="barra ch1">
+                    <h2 class="name ">Machop</h2>
+                    <div class="life_inner_section">
+                      <span class="hp">Hp</span>
+                      <div class="barra_borde">
+                          <div id="change_bar_2" class="barra_interna color_1"></div>
+                      </div>
+                      <span>
+                      <span id="change_numbers_2">32</span><span>/</span> <span id="vida_max_2">32</span>
+                      </span>
+                    </div>
+                </div>
+              </div>
+          </div>
+        </div>
+        <!-- The hidden section to play or show stats and play again -->
+        <div class="height_class start_section">
+          <div class="inside temporal_bg_color_2">
+              <button id="start_button">Start to Play</button>
+          </div>
+        </div>
+        <!-- section for developers info -->
+        <div class="height_class developers_section">
+          <div class="inside">
+          </div>
+        </div>
+        <!-- final_space -->
+        <div class="final_space">
+          <h2 class="ending">Continue?</h2>
+          <div class="decidiros">
+            <button class="button_ending">Sí</button>
+            <span class="counter">9</span>
+            <button class="button_ending">No</button>
+          </div>
+        </div>
       </div>
-      <!-- The hidden section to play or show stats and play again -->
-      <div class="height_class start_section">
-         <div class="inside temporal_bg_color_2">
-            <button id="start_button">Start to Play</button>
-         </div>
-      </div>
-      <!-- section for developers info -->
-      <div class="height_class developers_section">
-         <div class="inside">
-         </div>
-      </div>
+      
       <script src="js/js.js"></script>
    </body>
 </html>
