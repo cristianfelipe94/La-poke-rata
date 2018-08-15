@@ -9,25 +9,32 @@ let funciones = {
 
 
   control_sound(){
-    if(sound_viewer == true){
-      icon_transition[0].setAttribute('class','icon_transition sound_off');
-      music_4_battle.pause();
-      sound_viewer = false;
-    }else if(sound_viewer == false){
+    sound_viewer++;
+
+    if(sound_viewer > 2){
+      sound_viewer = 0;
+    }
+    
+    if(sound_viewer == 0){
       icon_transition[0].setAttribute('class','icon_transition sound_on');
-      music_4_battle.play();
-      sound_viewer = true;
+      music_4_battle.volume = 1;
+    }else if(sound_viewer == 1){
+      icon_transition[0].setAttribute('class','icon_transition sound_medium');
+      music_4_battle.volume = 0.2;
+    }else if(sound_viewer == 2){
+      icon_transition[0].setAttribute('class','icon_transition sound_off');
+      music_4_battle.volume = 0;
     }
   },
 
 
   resta_al_enemigo_1(){
     funciones.manejo_de_turnos();
-    vida_enemigo -= 1;
+    vida_enemigo -= 3;
     funciones.controlar_vida();
     barra_interna[0].style.setProperty('width',vida_enemigo * 10 + 'px');
     if(vida_enemigo > 0){
-      text.innerHTML = name[1].innerHTML + ' ha quemado con el lanzallamas a ' + name[0].innerHTML + '.';
+      text.innerHTML = name[1].innerHTML + ' le ha lanzado una '  + action[0].innerHTML.toLowerCase() + ' a ' + name[0].innerHTML + '.';
     }
     change_numbers_1.innerHTML = vida_enemigo;
   },
@@ -35,7 +42,7 @@ let funciones = {
 
   resta_al_enemigo_2(){
     funciones.manejo_de_turnos();
-    vida_enemigo -= 1;
+    vida_enemigo -= 2;
     funciones.controlar_vida();
     barra_interna[0].style.setProperty('width',vida_enemigo * 10 + 'px');
     if(vida_enemigo > 0){
@@ -63,7 +70,7 @@ let funciones = {
     funciones.controlar_vida();
     barra_interna[0].style.setProperty('width',vida_enemigo * 10 + 'px');
     if(vida_enemigo > 0){
-      text.innerHTML = name[1].innerHTML + ' le ha lanzado un ' + action[3].innerHTML + ' a ' + name[0].innerHTML + '.<br/>Y ha sido super efectivo.';
+      text.innerHTML = name[1].innerHTML + ' le ha lanzado un tremendo ' + action[3].innerHTML + ' a ' + name[0].innerHTML + '.<br/>Y ha sido super efectivo.';
     }
     change_numbers_1.innerHTML = vida_enemigo;
   },
@@ -144,7 +151,34 @@ let funciones = {
         estado_del_turno++;
       }
     }
+  },
+
+
+  cambiar_song(){
+    sound_state++;
+    if(sound_state > 3){
+      sound_state = 0;
+    }
+    switch(sound_state){
+      case 0:
+        music_4_battle.setAttribute('src','sounds/music/music_4_battle.mp3');
+        music_4_battle.play();
+        break;
+      case 1:
+        music_4_battle.setAttribute('src','sounds/music/music_4_battle_0.mp3');
+        music_4_battle.play();
+        break;
+      case 2:
+        music_4_battle.setAttribute('src','sounds/music/music_4_battle_1.mp3');
+        music_4_battle.play();
+        break;
+      case 3:
+        music_4_battle.setAttribute('src','sounds/music/music_4_battle_2.mp3');
+        music_4_battle.play();
+        break;
+    }
   }
+
 }
 
 
@@ -166,7 +200,7 @@ let name = document.getElementsByClassName('name'),
     icon_transition = document.getElementsByClassName('icon_transition');
 
 let sound_state = 0,
-    sound_viewer = true,    
+    sound_viewer = 0,    
     vida_enemigo = parseInt(document.getElementById('vida_max_1').innerHTML),
     vida_propia = parseInt(document.getElementById('vida_max_2').innerHTML),
     ataque_random = ['a banana', 'a crisis existencial', ' televisor', 'a reseña',  
@@ -174,6 +208,8 @@ let sound_state = 0,
                      'a indirecta', ' rosario', ' ecoladrillo', 'a solicitud de amistad', 
                      ' "No gracias, es que quiero concentrarme en mis estudios pero sigamos siendo amigos"'];                     
 
+                     
+                     
 // Eventos
 action[0].addEventListener('click',funciones.resta_al_enemigo_1);
 action[1].addEventListener('click',funciones.resta_al_enemigo_2);

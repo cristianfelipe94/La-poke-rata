@@ -74,6 +74,18 @@ body{
   border-bottom: 20px double transparent;
   border-right: 20px double white;
 }
+.sound_medium:after{
+  width: 25px;
+  height: 31px;
+  background: transparent;
+  left: 1px;
+  bottom: 40px;
+  border-radius: 50%;
+  border-top: 10px solid transparent;
+  border-left: 20px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid white;
+}
 .sound_off:after{
   width: 25px;
   height: 31px;
