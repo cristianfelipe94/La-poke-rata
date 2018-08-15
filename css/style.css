@@ -13,7 +13,7 @@
 }
 
 body{
-  overflow-x: hidden;
+  overflow: hidden;
   background: #2d461c;
 }
 
@@ -103,6 +103,10 @@ body{
 /* sound icon */
 
 /* sections section */
+.the_wrapper{
+  position: relative;
+}
+
 .height_class{
   position: absolute;
   height: 100vh;
@@ -171,16 +175,16 @@ body{
 .cloud_1{
   top: 25vh;
   right: -400px;
-  position: absolute;
-  background-image: url(../img/sprites/nubegrande.png);
+  position: fixed;
+  background-image: url('../img/sprites/nubegrande.png');
   animation: cloud-right 60s ease-in-out infinite;
 }
 
 .cloud_2{
   top: 20vh;
-  position: absolute;
+  position: fixed;
   left: -400px;    
-  background-image: url(../img/sprites/nubepeque.png);
+  background-image: url('../img/sprites/nubepeque.png');
   animation: cloud-left 45s ease-in-out infinite;
 }
 
@@ -203,14 +207,22 @@ body{
 }
 
 
-.background{
-  background-image: url('https://wallpaper-house.com/data/out/8/wallpaper2you_209893.jpg');
-  position: relative;
-  height: 100vh;
-  background-size: 2000px;
-  background-position-y: -470px;
-  background-position-x: 0%;
-  background-repeat: no-repeat;
+.background_img {
+  position: absolute;
+  background-image: url('../img/bg/bg_game1.png');
+  height: 80vh;
+  width: 100%;
+  background-repeat-y: no-repeat;
+  background-size: contain;
+}
+
+.background_floor {
+  position: absolute;
+  background-image: url('../img/bg/bg_game3.png');
+  height: 80vh;
+  width: 100%;
+  background-repeat-y: no-repeat;
+  background-size: contain;
 }
 
 .interaction_menu{
@@ -225,6 +237,7 @@ body{
 
 #text{
   width: 35%;
+  height: 250px;
   background: white;
   height: 140px;
   overflow: auto;
@@ -271,7 +284,7 @@ body{
   position: absolute;
   height: 118px;
   bottom: 32vh;
-  right: 150px;
+  right: 10%;
   z-index: 99;
   animation: frames_psyduck_container 1.6s step-end infinite;
 
@@ -301,7 +314,7 @@ body{
   position: absolute;
   height: 104px;
   bottom: 32vh;
-  left: 150px;
+  left: 10%;
   z-index: 97;
   animation: frames_machop_container 1.4s step-end infinite;
   transform: rotateY(180deg);
@@ -501,20 +514,121 @@ body{
 }
 /* juicy section */
 
+/* final_space */
+.final_space{
+  font-family: 'Press Start 2P', cursive;
+  z-index: -1000000;
+  background: #000000df;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  transition: 1s;
+  opacity: 0;
+}
+
+.counter{
+  margin: 0px 80px;
+  display: inline-block; 
+  width: 50px;
+}
+.ending{
+  text-shadow: 1px 1px #fff000,
+               -1px 1px #fff000,
+               1px -1px #fff000,
+               -1px -1px #fff000;
+  color: #fff;
+  width: 90%;
+  height: 50vh;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  font-size: 9vw;
+}
+.decidiros{
+  width: 90%;
+  text-align: center;
+  height: 50vh;
+  position: fixed;
+  top: 0;
+  bottom: -400px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.decidiros span{
+  text-align: center;
+  font-size: 4vw;
+  color: #fff000;
+}
+.button_ending{
+  background: transparent;
+  font-family: inherit;
+  padding: 5px;
+  border: 0px solid;
+  font-size: 4vw;
+  color: #f6f6f6;
+  animation: tic_tac 1s step-end infinite;
+  outline: none;
+  text-shadow: 1px 1px #fff000,
+               -1px 1px #fff000,
+               1px -1px #fff000,
+               -1px -1px #fff000;
+}
+.button_ending:hover{
+  cursor: pointer;
+}
+
+@keyframes tic_tac{
+  50%{
+    color: black;
+    text-shadow: 1px 1px transparent,
+               -1px 1px transparent,
+               1px -1px transparent,
+               -1px -1px transparent;
+  }
+}
+/* final_space */
+
 /* responsive */
-@media only screen and (max-width: 1110px){
+@media only screen and (max-width: 1000px){
+  #start_button {
+    font-size: 22px;
+    width: 80vw;
+    height: 3vh;
+  }
   .ch1{
     top: 16vh;
+    left: -1vw;
   }
   .ch2{
-    top: 30vh;
+    top: 16vh;
+    right: 5vw;
+  }
+  .barra {
+    width: 450px;
+  }
+  #text {
+    font-size: 25px;
+    height: 225px;
+  }
+  .action{
+    font-size: 22px
+  }
+  .barra h2{
+    font-size: 35px;
+    margin: 0 0 15px 22px;
+
   }
   @keyframes ch2_float{
     0%{
-      top: 30vh;
+      top: 16vh;
     }
     50%{
-      top: 32vh;
+      top: 18vh;
     }
   }
   
@@ -531,6 +645,12 @@ body{
   }
   #character_2{
     bottom: 30vh;
+  }
+  .background_img {
+    background-size: cover;
+  }
+  .background_floor{
+    background-size: cover;
   }
 }
 /* responsive */
