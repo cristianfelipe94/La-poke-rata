@@ -1,4 +1,9 @@
 /* global section */
+@font-face{
+  font-family: 'Press Start 2P';
+  src: url('../fonts/PS2P.ttf');
+}
+
 *{
   font-family: 'Press Start 2P', cursive;
   margin: 0;

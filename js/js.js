@@ -104,83 +104,92 @@ let funciones = {
       barra_interna[0].style.setProperty('border','0px solid');
       text.innerHTML = name[0].innerHTML + ' murió en la fría soledad de la esclavitud por su relativa fragilidad.<br/>';
       text.innerHTML += 'En el abismo de la violencia pokemón y sus peleas clandestinas.';
+      window.setTimeout(function(){
+        button_ending[0].style.setProperty('display','none');
+        button_ending[1].style.setProperty('display','none');
+        final_space.firstElementChild.innerHTML = 'You Win';
+        counter.innerHTML = 'Gracias por jugar';
+        counter.style.setProperty('width','60%');
+        final_space.style.setProperty('opacity','1');
+        final_space.style.setProperty('z-index','1000000');
+      }, 3000);
     }
     if(vida_propia <= 0){
       vida_propia = 0;
       barra_interna[1].style.setProperty('border','0px solid');
       text.innerHTML = name[1].innerHTML + ' murió porque fuiste un mal entrenador y una completa desgracia como ser humano.<br/>';
-    }
-    //solo si se pierde hay que agregar si se gana
-    if(vida_propia <= 0){
-      let button_ending = document.getElementsByClassName('button_ending');
-      let final_space = document.querySelector('.final_space'),
-          the_wrapper = document.querySelector('.the_wrapper'),
-          counter = document.querySelector('.counter');
-      let a = parseInt(counter.innerHTML);
-      let stop = true;
-      final_space.style.setProperty('opacity','1');
-      final_space.style.setProperty('z-index','1000000');
-
-      function continuar(){
-        button_ending[0].style.borderBottom = "6px solid #fff000";
-        stop = false;
-        console.log(stop);
-        final_space.style.setProperty('opacity','0');
-        final_space.style.setProperty('z-index','-1000000');
-        //Reinicia pelea
-        barra_interna[0].setAttribute('class','barra_interna color_1');
-        barra_interna[1].setAttribute('class','barra_interna color_1');
-
-        change_numbers_1.innerHTML = 32;
-        change_numbers_2.innerHTML = 32;
-
-        vida_enemigo = 32;
-        vida_propia = 32;
-
-        barra_interna[0].style.setProperty('width',vida_enemigo * 10 + 'px');
-        barra_interna[1].style.setProperty('width',vida_propia * 10 + 'px');
-
-        grid_options[0].style.setProperty('display','grid');
-        text.style.setProperty('width','35%');
-      }
-      
-      function no_continuar(){
-        button_ending[1].style.borderBottom = "6px solid #fff000";
-        final_space.style.setProperty('opacity','0');
-        final_space.style.setProperty('z-index','-1000000');
-        //Developers
-        stop = false;
-        console.log(stop);
-        the_wrapper.style.setProperty('transition','1s');
-        the_wrapper.style.setProperty('top','-100vh');
-        window.setTimeout(function(){
-          final_space.style.setProperty('display','none');
-        }, 1000);
-      }
-
-      function cuenta_regresiva(){
-        if(stop != false){
-          a--;
-          counter.innerHTML = a;
-        }        
-        if(a == 0){
-            
+      window.setTimeout(function(){
+        let a = parseInt(counter.innerHTML);
+        let stop = true;
+        final_space.style.setProperty('opacity','1');
+        final_space.style.setProperty('z-index','1000000');
+  
+        function continuar(){
+          button_ending[0].style.borderBottom = "6px solid #fff000";
+          stop = false;
           final_space.style.setProperty('opacity','0');
           final_space.style.setProperty('z-index','-1000000');
-          if( stop == true){
-            location.reload(true);
+          //Reinicia pelea
+          barra_interna[0].setAttribute('class','barra_interna color_1');
+          barra_interna[1].setAttribute('class','barra_interna color_1');
+  
+          change_numbers_1.innerHTML = 32;
+          change_numbers_2.innerHTML = 32;
+  
+          vida_enemigo = 32;
+          vida_propia = 32;
+  
+          barra_interna[0].style.setProperty('width',vida_enemigo * 10 + 'px');
+          barra_interna[1].style.setProperty('width',vida_propia * 10 + 'px');
+  
+          grid_options[0].style.setProperty('display','grid');
+          text.style.setProperty('width','35%');
+  
+          funciones.cambiar_song();
+  
+          /*
+            Uncaught (in promise) DOMException: The play() request was interrupted by a new load request.
+          */
+
+          text.innerHTML = "Vamos, que no te humillen de nuevo, el arroz es la clave.";
+        }
+        
+        function no_continuar(){
+          button_ending[1].style.borderBottom = "6px solid #fff000";
+          final_space.style.setProperty('opacity','0');
+          final_space.style.setProperty('z-index','-1000000');
+          //Developers
+          stop = false;
+          the_wrapper.style.setProperty('transition','1s');
+          the_wrapper.style.setProperty('top','-100vh');
+          window.setTimeout(function(){
+            final_space.style.setProperty('display','none');
+          }, 1000);
+        }
+  
+        function cuenta_regresiva(){
+          if(stop != false){
+            a--;
+            counter.innerHTML = a;
+          }        
+          if(a == 0){
+              
+            final_space.style.setProperty('opacity','0');
+            final_space.style.setProperty('z-index','-1000000');
+            if( stop == true){
+              location.reload(true);
+            }
+            
           }
           
         }
         
-      }
-      
-      button_ending[0].addEventListener('click',continuar);
-
-      button_ending[1].addEventListener('click',no_continuar);
-
-      cuenta_regresiva_interval_id = window.setInterval(cuenta_regresiva, 1000);
-
+        button_ending[0].addEventListener('click',continuar);
+  
+        button_ending[1].addEventListener('click',no_continuar);
+  
+        cuenta_regresiva_interval_id = window.setInterval(cuenta_regresiva, 1000);
+      }, 3000);
     }
   },
 
@@ -269,18 +278,22 @@ let name = document.getElementsByClassName('name'),
     grid_options = document.getElementsByClassName('grid_options'),
     start_section = document.getElementsByClassName('start_section'),
     barra_interna = document.getElementsByClassName('barra_interna'),
+    button_ending = document.getElementsByClassName('button_ending'),
     icon_transition = document.getElementsByClassName('icon_transition');
 
+let final_space = document.querySelector('.final_space'),
+    the_wrapper = document.querySelector('.the_wrapper'),
+    counter = document.querySelector('.counter');                     
+                    
 let sound_state = 0,
     sound_viewer = 0,    
     vida_enemigo = parseInt(document.getElementById('vida_max_1').innerHTML),
     vida_propia = parseInt(document.getElementById('vida_max_2').innerHTML),
-    ataque_random = ['a banana', 'a crisis existencial', ' televisor', 'a reseña',  
+    ataque_random = [' "háblale a la mano"', 'a crisis existencial', ' televisor', 'a reseña',  
                      'a peluca', ' comentario hiriente', ' Afedo cámate pofavo', 
                      'a indirecta', ' rosario', ' ecoladrillo', 'a solicitud de amistad', 
                      ' "No gracias, es que quiero concentrarme en mis estudios pero sigamos siendo amigos"'];                     
-
-                     
+ 
                      
 // Eventos
 action[0].addEventListener('click',funciones.resta_al_enemigo_1);
