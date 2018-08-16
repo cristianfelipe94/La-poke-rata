@@ -42,7 +42,7 @@ let funciones = {
 
   resta_al_enemigo_2(){
     funciones.manejo_de_turnos();
-    vida_enemigo -= 12;
+    vida_enemigo -= 8;
     funciones.controlar_vida();
     barra_interna[0].style.setProperty('width',vida_enemigo * 10 + 'px');
     if(vida_enemigo > 0){
@@ -66,7 +66,7 @@ let funciones = {
 
   resta_al_enemigo_4(){
     funciones.manejo_de_turnos();
-    vida_enemigo -= 31;
+    vida_enemigo -= 16;
     funciones.controlar_vida();
     barra_interna[0].style.setProperty('width',vida_enemigo * 10 + 'px');
     if(vida_enemigo > 0){
@@ -189,7 +189,7 @@ let funciones = {
             text.innerHTML = name[0].innerHTML + ' le ha lanzado un' + ataque_random[Math.floor(Math.random() * (ataque_random.length)) ] + ' a ' + name[1].innerHTML;
             grid_options[0].style.setProperty('display','none');
             if(vida_enemigo != 0){
-              vida_propia -= 31;
+              vida_propia -= 16;
             }
             funciones.controlar_vida();
             barra_interna[1].style.setProperty('width',parseInt(vida_propia) * 10 + 'px');
