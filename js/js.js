@@ -30,11 +30,11 @@ let funciones = {
 
   resta_al_enemigo_1(){
     funciones.manejo_de_turnos();
-    vida_enemigo -= 3;
+    vida_enemigo -= 0;
     funciones.controlar_vida();
     barra_interna[0].style.setProperty('width',vida_enemigo * 10 + 'px');
     if(vida_enemigo > 0){
-      text.innerHTML = name[1].innerHTML + ' le ha lanzado una '  + action[0].innerHTML.toLowerCase() + ' a ' + name[0].innerHTML + '.';
+      text.innerHTML = name[1].innerHTML + ' le ha lanzado una '  + action[0].innerHTML.toLowerCase() + ' a ' + name[0].innerHTML + '.<br/>' + name[0].innerHTML + ' se la comió.';
     }
     change_numbers_1.innerHTML = vida_enemigo;
   },
@@ -42,7 +42,7 @@ let funciones = {
 
   resta_al_enemigo_2(){
     funciones.manejo_de_turnos();
-    vida_enemigo -= 2;
+    vida_enemigo -= 10;
     funciones.controlar_vida();
     barra_interna[0].style.setProperty('width',vida_enemigo * 10 + 'px');
     if(vida_enemigo > 0){
@@ -66,7 +66,7 @@ let funciones = {
 
   resta_al_enemigo_4(){
     funciones.manejo_de_turnos();
-    vida_enemigo -= 5;
+    vida_enemigo -= 31;
     funciones.controlar_vida();
     barra_interna[0].style.setProperty('width',vida_enemigo * 10 + 'px');
     if(vida_enemigo > 0){
@@ -105,10 +105,9 @@ let funciones = {
       text.innerHTML = name[0].innerHTML + ' murió en la fría soledad de la esclavitud por su relativa fragilidad.<br/>';
       text.innerHTML += 'En el abismo de la violencia pokemón y sus peleas clandestinas.';
       window.setTimeout(function(){
-        button_ending[0].style.setProperty('display','none');
-        button_ending[1].style.setProperty('display','none');
+        newFunction();
         final_space.firstElementChild.innerHTML = 'You Win';
-        counter.innerHTML = 'Gracias por jugar';
+        counter.innerHTML = 'Aquí tienes tu arroz';
         counter.style.setProperty('width','60%');
         final_space.style.setProperty('opacity','1');
         final_space.style.setProperty('z-index','1000000');
@@ -119,14 +118,11 @@ let funciones = {
       barra_interna[1].style.setProperty('border','0px solid');
       text.innerHTML = name[1].innerHTML + ' murió porque fuiste un mal entrenador y una completa desgracia como ser humano.<br/>';
       window.setTimeout(function(){
-        let a = parseInt(counter.innerHTML);
-        let stop = true;
+        let a = 9;
         final_space.style.setProperty('opacity','1');
         final_space.style.setProperty('z-index','1000000');
   
         function continuar(){
-          button_ending[0].style.borderBottom = "6px solid #fff000";
-          stop = false;
           final_space.style.setProperty('opacity','0');
           final_space.style.setProperty('z-index','-1000000');
           //Reinicia pelea
@@ -155,40 +151,26 @@ let funciones = {
         }
         
         function no_continuar(){
-          button_ending[1].style.borderBottom = "6px solid #fff000";
           final_space.style.setProperty('opacity','0');
           final_space.style.setProperty('z-index','-1000000');
           //Developers
-          stop = false;
           the_wrapper.style.setProperty('transition','1s');
           the_wrapper.style.setProperty('top','-100vh');
+          document.querySelector('.play_again').addEventListener('click',function(){
+            the_wrapper.style.setProperty('top','0vh');
+            continuar();
+            text.innerHTML = "¡¡A luchar esclavos!!";
+          });
           window.setTimeout(function(){
-            final_space.style.setProperty('display','none');
-          }, 1000);
-        }
-  
-        function cuenta_regresiva(){
-          if(stop != false){
-            a--;
-            counter.innerHTML = a;
-          }        
-          if(a == 0){
-              
             final_space.style.setProperty('opacity','0');
             final_space.style.setProperty('z-index','-1000000');
-            if( stop == true){
-              location.reload(true);
-            }
-            
-          }
-          
+          }, 1000);
         }
         
         button_ending[0].addEventListener('click',continuar);
   
         button_ending[1].addEventListener('click',no_continuar);
-  
-        cuenta_regresiva_interval_id = window.setInterval(cuenta_regresiva, 1000);
+
       }, 3000);
     }
   },
@@ -198,7 +180,7 @@ let funciones = {
     let estado_del_turno = 0;
     grid_options[0].style.setProperty('display','none');
     text.style.setProperty('width','94%');
-    window.setTimeout(mostrar_options, 3000);
+    mostrar_options();
     function mostrar_options(){
       if(vida_enemigo != 0 || vida_propia != 0){
         switch(estado_del_turno){
@@ -211,7 +193,7 @@ let funciones = {
             text.innerHTML = name[0].innerHTML + ' le ha lanzado un' + ataque_random[Math.floor(Math.random() * (ataque_random.length)) ] + ' a ' + name[1].innerHTML;
             grid_options[0].style.setProperty('display','none');
             if(vida_enemigo != 0){
-              vida_propia -= 4;
+              vida_propia -= 31;
             }
             funciones.controlar_vida();
             barra_interna[1].style.setProperty('width',vida_propia * 10 + 'px');
@@ -225,7 +207,7 @@ let funciones = {
             break;    
         }
         if(vida_enemigo == 0 || vida_propia == 0){
-              grid_options[0].style.setProperty('display','none');
+            grid_options[0].style.setProperty('display','none');
             text.style.setProperty('width','94%');
             funciones.controlar_vida(); 
         }
@@ -303,3 +285,8 @@ action[3].addEventListener('click',funciones.resta_al_enemigo_4);
 content_sound.addEventListener('click',funciones.control_sound);
 music_4_battle.addEventListener('ended',funciones.cambiar_song);
 start_button.addEventListener('click',funciones.start_game);
+
+function newFunction() {
+  button_ending[0].style.setProperty('display', 'none');
+  button_ending[1].style.setProperty('display', 'none');
+}
