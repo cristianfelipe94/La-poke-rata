@@ -100,6 +100,7 @@ let funciones = {
     }
     //Para que la vida no sea valores negativos
     if(vida_enemigo <= 0){
+      vida_enemigo = 0;
       barra_interna[0].style.setProperty('border','0px solid');
       text.innerHTML = name[0].innerHTML + ' murió en la fría soledad de la esclavitud por su relativa fragilidad.<br/>';
       text.innerHTML += 'En el abismo de la violencia pokemón y sus peleas clandestinas.';
@@ -113,7 +114,6 @@ let funciones = {
       }, 3000);
     }
     if(vida_propia <= 0){
-      vida_propia = 0;
       barra_interna[1].style.setProperty('border','0px solid');
       vida_propia = 0.1;
       text.innerHTML = name[1].innerHTML + ' murió porque fuiste un mal entrenador y una completa desgracia como ser humano.<br/>';
