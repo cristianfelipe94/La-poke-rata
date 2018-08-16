@@ -42,7 +42,7 @@ let funciones = {
 
   resta_al_enemigo_2(){
     funciones.manejo_de_turnos();
-    vida_enemigo -= 10;
+    vida_enemigo -= 12;
     funciones.controlar_vida();
     barra_interna[0].style.setProperty('width',vida_enemigo * 10 + 'px');
     if(vida_enemigo > 0){
@@ -100,7 +100,6 @@ let funciones = {
     }
     //Para que la vida no sea valores negativos
     if(vida_enemigo <= 0){
-      vida_enemigo = 0;
       barra_interna[0].style.setProperty('border','0px solid');
       text.innerHTML = name[0].innerHTML + ' murió en la fría soledad de la esclavitud por su relativa fragilidad.<br/>';
       text.innerHTML += 'En el abismo de la violencia pokemón y sus peleas clandestinas.';
@@ -116,6 +115,7 @@ let funciones = {
     if(vida_propia <= 0){
       vida_propia = 0;
       barra_interna[1].style.setProperty('border','0px solid');
+      vida_propia = 0.1;
       text.innerHTML = name[1].innerHTML + ' murió porque fuiste un mal entrenador y una completa desgracia como ser humano.<br/>';
       window.setTimeout(function(){
         let a = 9;
@@ -161,10 +161,6 @@ let funciones = {
             continuar();
             text.innerHTML = "¡¡A luchar esclavos!!";
           });
-          window.setTimeout(function(){
-            final_space.style.setProperty('opacity','0');
-            final_space.style.setProperty('z-index','-1000000');
-          }, 1000);
         }
         
         button_ending[0].addEventListener('click',continuar);
@@ -196,8 +192,8 @@ let funciones = {
               vida_propia -= 31;
             }
             funciones.controlar_vida();
-            barra_interna[1].style.setProperty('width',vida_propia * 10 + 'px');
-            change_numbers_2.innerHTML = vida_propia;
+            barra_interna[1].style.setProperty('width',parseInt(vida_propia) * 10 + 'px');
+            change_numbers_2.innerHTML = parseInt(vida_propia);
             window.setTimeout(mostrar_options, 3000);
             break;
           case 2:
