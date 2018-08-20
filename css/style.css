@@ -421,13 +421,13 @@ body{
   }
 }
 
-.barra{
+.bar{
   width: 513px;
   height: 125px;
   position: absolute;
 }
 
-.barra h2{
+.bar h2{
   padding-left: 21px;
   padding-top: 7px;
   font-size: 16px;
@@ -485,7 +485,7 @@ body{
   left: 7px;
 }
 
-.barra_borde{
+.border_bar{
   width: 320px;
   position: relative;
   top: 3px;
@@ -495,7 +495,7 @@ body{
   background-color: #f6f6f6;
 }
 
-.barra_interna{
+.inside_bar{
   transition: 1s;
   height: 35px;
   width: 320px;
@@ -650,7 +650,7 @@ body{
     top: 16vh;
     right: 5vw;
   }
-  .barra {
+  .bar {
     width: 450px;
   }
   #text {
@@ -660,7 +660,7 @@ body{
   .action{
     font-size: 22px
   }
-  .barra h2{
+  .bar h2{
     font-size: 35px;
     margin: 0 0 15px 22px;
   }
